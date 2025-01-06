@@ -1,0 +1,25 @@
+services:
+
+    caddy:
+        image: caddy:2.9-alpine
+        restart: unless-stopped
+        cap_add:
+            - NET_ADMIN
+        ports:
+            - "80:80"
+            - "443:443"
+            - "443:443/udp"
+        volumes:
+            - $PWD/conf:/etc/caddy
+            - $PWD/site:/srv
+            - caddy_data:/data
+            - caddy_config:/config
+    php:
+        image: thecodingmachine/php:8.4-v4-fpm
+        volumes:
+            - .:/var/www/html:rw
+            - symfony-var:/var/www/html/var:rw
+volumes:
+    caddy_data:
+    caddy_config:
+    symfony-var:
