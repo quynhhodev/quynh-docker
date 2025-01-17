@@ -2,27 +2,11 @@ version: '3.7'
 
 services:
 
-    # caddy:
-    #     image: caddy:2.9-alpine
-    #     restart: unless-stopped
-    #     # cap_add:
-    #     #     - NET_ADMIN
-    #     ports:
-    #         - "80:80"
-    #         - "443:443"
-    #         - "443:443/udp"
-    #     volumes:
-    #         - $PWD/conf:/etc/caddy
-    #         - $PWD/site:/srv
-    #         - caddy_data:/data
-    #         - caddy_config:/config
-    #     depends_on:
-    #         - apache
     nginx: 
         image: nginx:1.27-alpine
         volumes:
             - .:/var/www/html:rw
-            - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+            - ./docker/nginx/demo-default.conf:/etc/nginx/conf.d/default.conf
         ports:
             - "80:80"
 
@@ -32,22 +16,20 @@ services:
             - .:/var/www/html:rw
         ports:
             - "9000:9000"
-        # environment:
-        #     - NGINX_HOST=foobar.com
-        #     - NGINX_PORT=80
+        environment:
+            - PHP_EXTENSION_PDO_PGSQL=1
+    
+    postgresql:
+        image: postgres:latest
+        restart: always
+        environment:
+            - POSTGRES_PASSWORD=quynh121201
+            - POSTGRES_USER=quynh
+            - POSTGRES_DB=quynh-docker
+        volumes:
+            - postgres_data:/var/lib/postgresql/data:rw
+        
+volumes:
+    postgres_data:
 
-    # apache:
-    #     build: 
-    #         context: .
-    #         dockerfile: ./docker/apache/Dockerfile
-    #     ports:
-    #         - "9000:80"
-    #     volumes:
-    #         - .:/var/www/html:rw
-    #         - symfony-var:/var/www/html/var:rw
-        # entrypoint: 
-        #     - ./docker/demo.sh
-# volumes:
-    # caddy_data:
-    # caddy_config:
-    # symfony-var:
+
