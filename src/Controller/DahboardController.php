@@ -19,7 +19,6 @@ final class DahboardController extends AbstractController
     public function index(): JsonResponse
     {
         $this->bus->dispatch(new SendEmailMessage('abc', 500, 100));
-
         return $this->json([
             'message' => 'Welcome to your new controller!',
             'path' => 'src/Controller/DahboardController.php',

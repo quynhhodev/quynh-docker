@@ -11,6 +11,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
 use Symfony\Component\ExpressionLanguage\ExpressionLanguage;
 
+
 #[AsCommand(
     name: 'test',
     description: 'Add a short description for your command',
@@ -29,7 +30,6 @@ class TestCommand extends Command
         $io = new SymfonyStyle($input, $output);
 
         $el = new ExpressionLanguage();
-        dd($el->evaluate('1 << 4'));
 
         $io->success('You have a new command! Now make it your own! Pass --help to see your options.');
 

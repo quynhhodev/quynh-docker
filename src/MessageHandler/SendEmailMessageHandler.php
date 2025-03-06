@@ -23,6 +23,6 @@ final class SendEmailMessageHandler
         $product->setPrice($message->getPrice());
         $product->setQuatity($message->getQuatity());
         $this->entityManager->persist($product);
-        // $this->entityManager->flush();
+        $this->entityManager->flush();
     }
 }
