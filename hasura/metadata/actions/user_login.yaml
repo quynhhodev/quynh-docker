@@ -1,0 +1,13 @@
+name: user_login
+definition:
+    handler: 'http://localhost:3000'
+    output_type: TokenOutput
+    arguments:
+        -
+            name: arg1
+            type: UserInput!
+    type: mutation
+    kind: synchronous
+permissions:
+    -
+        role: ROLE_USER

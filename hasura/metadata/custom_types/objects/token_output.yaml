@@ -1,0 +1,5 @@
+name: TokenOutput
+fields:
+    -
+        name: token
+        type: String!

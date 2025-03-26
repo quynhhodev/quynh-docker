@@ -1,0 +1,8 @@
+name: UserInput
+fields:
+    -
+        name: username
+        type: String!
+    -
+        name: password
+        type: String!

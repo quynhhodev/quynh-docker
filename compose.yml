@@ -9,7 +9,7 @@ services:
             - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
         ports:
             - "80:80"
-            - "443:443"
+            - "8443:443"
 
     php:
         image: thecodingmachine/php:8.4-v4-fpm
@@ -44,6 +44,33 @@ services:
             -   target: 15672
                 published: 15672
                 protocol: tcp
+    
+    hasura:
+        image: hasura/graphql-engine:${HASURA_VERSION:-v2.1.1}
+        restart: on-failure
+        ports:
+            -   target: 8080
+                published: 8080
+                protocol: tcp
+        environment:
+            APP_BASE_URI: 'http://localhost'
+            # application basic auth for Hasura identify itself. (will be use in table event & actions) see .env
+            # base64_encode('hasura:!ChangeMe!');
+            # APP_HASURA_BASIC_AUTH: "Basic ${APP_HASURA_BASIC_AUTH:-aGFzdXJhOiFDaGFuZ2VNZSE=}"
+            # https://hasura.io/docs/latest/graphql/core/deployment/graphql-engine-flags/reference.html
+            # HASURA_GRAPHQL_ADMIN_SECRET: quynh121201
+            # HASURA_GRAPHQL_AUTH_HOOK: 'http://localhost:3000'
+            SYMFONY_REMOTE_SCHEMA_ENDPOINT: http://nginx:443/graphql/
+            HASURA_GRAPHQL_DATABASE_URL: postgresql://quynh:quynh121201@postgresql:5432/quynh-docker
+            HASURA_GRAPHQL_EXPERIMENTAL_FEATURES: 'inherited_roles'
+            HASURA_GRAPHQL_ENABLE_REMOTE_SCHEMA_PERMISSIONS: 'true'
+            HASURA_GRAPHQL_ENABLE_CONSOLE: 'true'
+            HASURA_GRAPHQL_LOG_LEVEL: 'warn'
+            HASURA_GRAPHQL_ENABLED_APIS: 'metadata, graphql'
+            HASURA_GRAPHQL_METADATA_DATABASE_URL: postgresql://quynh:quynh121201@postgresql:5432/quynh-docker
+        depends_on:
+            - nginx
+            - postgresql
 
         
 volumes:

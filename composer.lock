@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "35783ed68bce1d6e3f13064d9f4fc01c",
+    "content-hash": "0e094264633159cf049379a4c47a1fb3",
     "packages": [
         {
             "name": "doctrine/cache",
@@ -1222,6 +1222,278 @@
             "time": "2024-10-21T18:21:57+00:00"
         },
         {
+            "name": "hasura-extra/api-client",
+            "version": "5.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/hasura-extra/api-client.git",
+                "reference": "67443bc9ecc3895ddcdf37d4eec3f4c7c6221bb9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/hasura-extra/api-client/zipball/67443bc9ecc3895ddcdf37d4eec3f4c7c6221bb9",
+                "reference": "67443bc9ecc3895ddcdf37d4eec3f4c7c6221bb9",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.2",
+                "symfony/http-client": "^7.0"
+            },
+            "conflict": {
+                "hasura-extra/auth-hook": "<5.0.0",
+                "hasura-extra/bundle": "<5.0.0",
+                "hasura-extra/event-dispatcher": "<5.0.0",
+                "hasura-extra/graphql-scalars": "<5.0.0",
+                "hasura-extra/hasura-bundle": "*",
+                "hasura-extra/laravel": "<2.5.0",
+                "hasura-extra/metadata": "<5.0.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^10.4"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "4.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Hasura\\ApiClient\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "The library provides an api client to interact with Hasura api.",
+            "support": {
+                "source": "https://github.com/hasura-extra/api-client/tree/5.0.0"
+            },
+            "time": "2024-01-03T18:34:47+00:00"
+        },
+        {
+            "name": "hasura-extra/auth-hook",
+            "version": "5.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/hasura-extra/auth-hook.git",
+                "reference": "d987d283b92af317f49b8d2bf6112eac1a6f72fb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/hasura-extra/auth-hook/zipball/d987d283b92af317f49b8d2bf6112eac1a6f72fb",
+                "reference": "d987d283b92af317f49b8d2bf6112eac1a6f72fb",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.2",
+                "psr/http-factory": "^1.0",
+                "psr/http-server-handler": "^1.0"
+            },
+            "conflict": {
+                "hasura-extra/api-client": "<5.0.0",
+                "hasura-extra/bundle": "<5.0.0",
+                "hasura-extra/event-dispatcher": "<5.0.0",
+                "hasura-extra/graphql-scalars": "<5.0.0",
+                "hasura-extra/metadata": "<5.0.0"
+            },
+            "require-dev": {
+                "nyholm/psr7": "^1.0",
+                "phpunit/phpunit": "^10.4"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "4.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Hasura\\AuthHook\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Webhook authentication for Hasura.",
+            "support": {
+                "issues": "https://github.com/hasura-extra/auth-hook/issues",
+                "source": "https://github.com/hasura-extra/auth-hook/tree/5.0.0"
+            },
+            "time": "2024-01-03T18:34:43+00:00"
+        },
+        {
+            "name": "hasura-extra/bundle",
+            "version": "5.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/hasura-extra/bundle.git",
+                "reference": "6bce62c070d217bd39b881ed3da54ef136af8109"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/hasura-extra/bundle/zipball/6bce62c070d217bd39b881ed3da54ef136af8109",
+                "reference": "6bce62c070d217bd39b881ed3da54ef136af8109",
+                "shasum": ""
+            },
+            "require": {
+                "hasura-extra/api-client": "^5.0",
+                "hasura-extra/auth-hook": "^5.0",
+                "hasura-extra/event-dispatcher": "^5.0",
+                "hasura-extra/metadata": "^5.0",
+                "php": ">=8.2",
+                "symfony/dependency-injection": "^7.0",
+                "symfony/framework-bundle": "^7.0",
+                "symfony/http-kernel": "^7.0",
+                "symfony/psr7-pack": "^1.0"
+            },
+            "conflict": {
+                "hasura-extra/graphql-scalars": "<5.0.0",
+                "hasura-extra/hasura-bundle": "*",
+                "hasura-extra/laravel": "<2.5.0"
+            },
+            "require-dev": {
+                "nyholm/psr7": "^1.0",
+                "phpunit/phpunit": "^10.4",
+                "symfony/filesystem": "^7.0",
+                "symfony/proxy-manager-bridge": "^6.4",
+                "symfony/security-bundle": "^7.0",
+                "symfony/test-pack": "^1.0",
+                "symfony/uid": "^7.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "4.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Hasura\\Bundle\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Symfony bundle to build modern web APIs with Hasura graphql engine.",
+            "support": {
+                "source": "https://github.com/hasura-extra/bundle/tree/5.0.0"
+            },
+            "time": "2024-01-03T18:34:49+00:00"
+        },
+        {
+            "name": "hasura-extra/event-dispatcher",
+            "version": "5.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/hasura-extra/event-dispatcher.git",
+                "reference": "fe334e9b868ff5ec77df2c218707fdfce79615e2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/hasura-extra/event-dispatcher/zipball/fe334e9b868ff5ec77df2c218707fdfce79615e2",
+                "reference": "fe334e9b868ff5ec77df2c218707fdfce79615e2",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.2",
+                "psr/event-dispatcher": "^1.0",
+                "psr/http-server-handler": "^1.0"
+            },
+            "conflict": {
+                "hasura-extra/api-client": "<5.0.0",
+                "hasura-extra/auth-hook": "<5.0.0",
+                "hasura-extra/bundle": "<5.0.0",
+                "hasura-extra/graphql-scalars": "<5.0.0",
+                "hasura-extra/laravel": "<2.5.0",
+                "hasura-extra/metadata": "<5.0.0"
+            },
+            "require-dev": {
+                "nyholm/psr7": "^1.0",
+                "phpunit/phpunit": "^10.4"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "4.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Hasura\\EventDispatcher\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Support to dispatch events triggered by Hasura.",
+            "support": {
+                "source": "https://github.com/hasura-extra/event-dispatcher/tree/5.0.0"
+            },
+            "time": "2024-01-03T18:34:51+00:00"
+        },
+        {
+            "name": "hasura-extra/metadata",
+            "version": "5.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/hasura-extra/metadata.git",
+                "reference": "ecb9b90f573749f44dcc123ce783f71489fc9c62"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/hasura-extra/metadata/zipball/ecb9b90f573749f44dcc123ce783f71489fc9c62",
+                "reference": "ecb9b90f573749f44dcc123ce783f71489fc9c62",
+                "shasum": ""
+            },
+            "require": {
+                "hasura-extra/api-client": "^5.0",
+                "php": ">=8.2",
+                "symfony/console": "^7.0",
+                "symfony/filesystem": "^7.0",
+                "symfony/string": "^7.0",
+                "symfony/yaml": "^7.0"
+            },
+            "conflict": {
+                "hasura-extra/auth-hook": "<5.0.0",
+                "hasura-extra/bundle": "<5.0.0",
+                "hasura-extra/event-dispatcher": "<5.0.0",
+                "hasura-extra/graphql-scalars": "<5.0.0",
+                "hasura-extra/hasura-bundle": "*",
+                "hasura-extra/laravel": "<2.5.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^10.4"
+            },
+            "bin": [
+                "bin/hasura-metadata"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "4.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Hasura\\Metadata\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "The library help to manage Hasura metadata.",
+            "support": {
+                "source": "https://github.com/hasura-extra/metadata/tree/5.0.0"
+            },
+            "time": "2024-01-03T18:34:54+00:00"
+        },
+        {
             "name": "lcobucci/clock",
             "version": "3.3.1",
             "source": {
@@ -1475,6 +1747,163 @@
             "time": "2025-01-06T16:34:57+00:00"
         },
         {
+            "name": "nyholm/psr7",
+            "version": "1.8.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Nyholm/psr7.git",
+                "reference": "a71f2b11690f4b24d099d6b16690a90ae14fc6f3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Nyholm/psr7/zipball/a71f2b11690f4b24d099d6b16690a90ae14fc6f3",
+                "reference": "a71f2b11690f4b24d099d6b16690a90ae14fc6f3",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2",
+                "psr/http-factory": "^1.0",
+                "psr/http-message": "^1.1 || ^2.0"
+            },
+            "provide": {
+                "php-http/message-factory-implementation": "1.0",
+                "psr/http-factory-implementation": "1.0",
+                "psr/http-message-implementation": "1.0"
+            },
+            "require-dev": {
+                "http-interop/http-factory-tests": "^0.9",
+                "php-http/message-factory": "^1.0",
+                "php-http/psr7-integration-tests": "^1.0",
+                "phpunit/phpunit": "^7.5 || ^8.5 || ^9.4",
+                "symfony/error-handler": "^4.4"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.8-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Nyholm\\Psr7\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Tobias Nyholm",
+                    "email": "tobias.nyholm@gmail.com"
+                },
+                {
+                    "name": "Martijn van der Ven",
+                    "email": "martijn@vanderven.se"
+                }
+            ],
+            "description": "A fast PHP7 implementation of PSR-7",
+            "homepage": "https://tnyholm.se",
+            "keywords": [
+                "psr-17",
+                "psr-7"
+            ],
+            "support": {
+                "issues": "https://github.com/Nyholm/psr7/issues",
+                "source": "https://github.com/Nyholm/psr7/tree/1.8.2"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/Zegnat",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/nyholm",
+                    "type": "github"
+                }
+            ],
+            "time": "2024-09-09T07:06:30+00:00"
+        },
+        {
+            "name": "php-http/discovery",
+            "version": "1.20.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-http/discovery.git",
+                "reference": "82fe4c73ef3363caed49ff8dd1539ba06044910d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-http/discovery/zipball/82fe4c73ef3363caed49ff8dd1539ba06044910d",
+                "reference": "82fe4c73ef3363caed49ff8dd1539ba06044910d",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1.0|^2.0",
+                "php": "^7.1 || ^8.0"
+            },
+            "conflict": {
+                "nyholm/psr7": "<1.0",
+                "zendframework/zend-diactoros": "*"
+            },
+            "provide": {
+                "php-http/async-client-implementation": "*",
+                "php-http/client-implementation": "*",
+                "psr/http-client-implementation": "*",
+                "psr/http-factory-implementation": "*",
+                "psr/http-message-implementation": "*"
+            },
+            "require-dev": {
+                "composer/composer": "^1.0.2|^2.0",
+                "graham-campbell/phpspec-skip-example-extension": "^5.0",
+                "php-http/httplug": "^1.0 || ^2.0",
+                "php-http/message-factory": "^1.0",
+                "phpspec/phpspec": "^5.1 || ^6.1 || ^7.3",
+                "sebastian/comparator": "^3.0.5 || ^4.0.8",
+                "symfony/phpunit-bridge": "^6.4.4 || ^7.0.1"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "Http\\Discovery\\Composer\\Plugin",
+                "plugin-optional": true
+            },
+            "autoload": {
+                "psr-4": {
+                    "Http\\Discovery\\": "src/"
+                },
+                "exclude-from-classmap": [
+                    "src/Composer/Plugin.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Márk Sági-Kazár",
+                    "email": "mark.sagikazar@gmail.com"
+                }
+            ],
+            "description": "Finds and installs PSR-7, PSR-17, PSR-18 and HTTPlug implementations",
+            "homepage": "http://php-http.org",
+            "keywords": [
+                "adapter",
+                "client",
+                "discovery",
+                "factory",
+                "http",
+                "message",
+                "psr17",
+                "psr7"
+            ],
+            "support": {
+                "issues": "https://github.com/php-http/discovery/issues",
+                "source": "https://github.com/php-http/discovery/tree/1.20.0"
+            },
+            "time": "2024-10-02T11:20:13+00:00"
+        },
+        {
             "name": "psr/cache",
             "version": "3.0.0",
             "source": {
@@ -1673,6 +2102,170 @@
                 "source": "https://github.com/php-fig/event-dispatcher/tree/1.0.0"
             },
             "time": "2019-01-08T18:20:26+00:00"
+        },
+        {
+            "name": "psr/http-factory",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/http-factory.git",
+                "reference": "2b4765fddfe3b508ac62f829e852b1501d3f6e8a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/http-factory/zipball/2b4765fddfe3b508ac62f829e852b1501d3f6e8a",
+                "reference": "2b4765fddfe3b508ac62f829e852b1501d3f6e8a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1",
+                "psr/http-message": "^1.0 || ^2.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\Http\\Message\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "https://www.php-fig.org/"
+                }
+            ],
+            "description": "PSR-17: Common interfaces for PSR-7 HTTP message factories",
+            "keywords": [
+                "factory",
+                "http",
+                "message",
+                "psr",
+                "psr-17",
+                "psr-7",
+                "request",
+                "response"
+            ],
+            "support": {
+                "source": "https://github.com/php-fig/http-factory"
+            },
+            "time": "2024-04-15T12:06:14+00:00"
+        },
+        {
+            "name": "psr/http-message",
+            "version": "2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/http-message.git",
+                "reference": "402d35bcb92c70c026d1a6a9883f06b2ead23d71"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/http-message/zipball/402d35bcb92c70c026d1a6a9883f06b2ead23d71",
+                "reference": "402d35bcb92c70c026d1a6a9883f06b2ead23d71",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.2 || ^8.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\Http\\Message\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "https://www.php-fig.org/"
+                }
+            ],
+            "description": "Common interface for HTTP messages",
+            "homepage": "https://github.com/php-fig/http-message",
+            "keywords": [
+                "http",
+                "http-message",
+                "psr",
+                "psr-7",
+                "request",
+                "response"
+            ],
+            "support": {
+                "source": "https://github.com/php-fig/http-message/tree/2.0"
+            },
+            "time": "2023-04-04T09:54:51+00:00"
+        },
+        {
+            "name": "psr/http-server-handler",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/http-server-handler.git",
+                "reference": "84c4fb66179be4caaf8e97bd239203245302e7d4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/http-server-handler/zipball/84c4fb66179be4caaf8e97bd239203245302e7d4",
+                "reference": "84c4fb66179be4caaf8e97bd239203245302e7d4",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0",
+                "psr/http-message": "^1.0 || ^2.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\Http\\Server\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "https://www.php-fig.org/"
+                }
+            ],
+            "description": "Common interface for HTTP server-side request handler",
+            "keywords": [
+                "handler",
+                "http",
+                "http-interop",
+                "psr",
+                "psr-15",
+                "psr-7",
+                "request",
+                "response",
+                "server"
+            ],
+            "support": {
+                "source": "https://github.com/php-fig/http-server-handler/tree/1.0.2"
+            },
+            "time": "2023-04-10T20:06:20+00:00"
         },
         {
             "name": "psr/log",
@@ -3255,6 +3848,179 @@
             "time": "2024-12-19T14:25:03+00:00"
         },
         {
+            "name": "symfony/http-client",
+            "version": "v7.2.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/http-client.git",
+                "reference": "78981a2ffef6437ed92d4d7e2a86a82f256c6dc6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/http-client/zipball/78981a2ffef6437ed92d4d7e2a86a82f256c6dc6",
+                "reference": "78981a2ffef6437ed92d4d7e2a86a82f256c6dc6",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.2",
+                "psr/log": "^1|^2|^3",
+                "symfony/deprecation-contracts": "^2.5|^3",
+                "symfony/http-client-contracts": "~3.4.4|^3.5.2",
+                "symfony/service-contracts": "^2.5|^3"
+            },
+            "conflict": {
+                "amphp/amp": "<2.5",
+                "php-http/discovery": "<1.15",
+                "symfony/http-foundation": "<6.4"
+            },
+            "provide": {
+                "php-http/async-client-implementation": "*",
+                "php-http/client-implementation": "*",
+                "psr/http-client-implementation": "1.0",
+                "symfony/http-client-implementation": "3.0"
+            },
+            "require-dev": {
+                "amphp/http-client": "^4.2.1|^5.0",
+                "amphp/http-tunnel": "^1.0|^2.0",
+                "amphp/socket": "^1.1",
+                "guzzlehttp/promises": "^1.4|^2.0",
+                "nyholm/psr7": "^1.0",
+                "php-http/httplug": "^1.0|^2.0",
+                "psr/http-client": "^1.0",
+                "symfony/amphp-http-client-meta": "^1.0|^2.0",
+                "symfony/dependency-injection": "^6.4|^7.0",
+                "symfony/http-kernel": "^6.4|^7.0",
+                "symfony/messenger": "^6.4|^7.0",
+                "symfony/process": "^6.4|^7.0",
+                "symfony/rate-limiter": "^6.4|^7.0",
+                "symfony/stopwatch": "^6.4|^7.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\HttpClient\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Provides powerful methods to fetch HTTP resources synchronously or asynchronously",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "http"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/http-client/tree/v7.2.4"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2025-02-13T10:27:23+00:00"
+        },
+        {
+            "name": "symfony/http-client-contracts",
+            "version": "v3.5.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/http-client-contracts.git",
+                "reference": "ee8d807ab20fcb51267fdace50fbe3494c31e645"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/http-client-contracts/zipball/ee8d807ab20fcb51267fdace50fbe3494c31e645",
+                "reference": "ee8d807ab20fcb51267fdace50fbe3494c31e645",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.1"
+            },
+            "type": "library",
+            "extra": {
+                "thanks": {
+                    "url": "https://github.com/symfony/contracts",
+                    "name": "symfony/contracts"
+                },
+                "branch-alias": {
+                    "dev-main": "3.5-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Contracts\\HttpClient\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Test/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Generic abstractions related to HTTP clients",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "abstractions",
+                "contracts",
+                "decoupling",
+                "interfaces",
+                "interoperability",
+                "standards"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/http-client-contracts/tree/v3.5.2"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2024-12-07T08:49:48+00:00"
+        },
+        {
             "name": "symfony/http-foundation",
             "version": "v7.2.2",
             "source": {
@@ -4158,6 +4924,134 @@
                 }
             ],
             "time": "2025-01-27T11:08:17+00:00"
+        },
+        {
+            "name": "symfony/psr-http-message-bridge",
+            "version": "v7.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/psr-http-message-bridge.git",
+                "reference": "03f2f72319e7acaf2a9f6fcbe30ef17eec51594f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/psr-http-message-bridge/zipball/03f2f72319e7acaf2a9f6fcbe30ef17eec51594f",
+                "reference": "03f2f72319e7acaf2a9f6fcbe30ef17eec51594f",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.2",
+                "psr/http-message": "^1.0|^2.0",
+                "symfony/http-foundation": "^6.4|^7.0"
+            },
+            "conflict": {
+                "php-http/discovery": "<1.15",
+                "symfony/http-kernel": "<6.4"
+            },
+            "require-dev": {
+                "nyholm/psr7": "^1.1",
+                "php-http/discovery": "^1.15",
+                "psr/log": "^1.1.4|^2|^3",
+                "symfony/browser-kit": "^6.4|^7.0",
+                "symfony/config": "^6.4|^7.0",
+                "symfony/event-dispatcher": "^6.4|^7.0",
+                "symfony/framework-bundle": "^6.4|^7.0",
+                "symfony/http-kernel": "^6.4|^7.0"
+            },
+            "type": "symfony-bridge",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Bridge\\PsrHttpMessage\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "PSR HTTP message bridge",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "http",
+                "http-message",
+                "psr-17",
+                "psr-7"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/psr-http-message-bridge/tree/v7.2.0"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2024-09-26T08:57:56+00:00"
+        },
+        {
+            "name": "symfony/psr7-pack",
+            "version": "v1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/psr7-pack.git",
+                "reference": "f23d8d87211b8147628a54f231947c1989de36bc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/psr7-pack/zipball/f23d8d87211b8147628a54f231947c1989de36bc",
+                "reference": "f23d8d87211b8147628a54f231947c1989de36bc",
+                "shasum": ""
+            },
+            "require": {
+                "php-http/discovery": "^1.18",
+                "psr/http-factory-implementation": "*",
+                "symfony/psr-http-message-bridge": "*"
+            },
+            "type": "symfony-pack",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A pack for bridging PSR-7/17",
+            "support": {
+                "issues": "https://github.com/symfony/psr7-pack/issues",
+                "source": "https://github.com/symfony/psr7-pack/tree/v1.3.0"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2023-05-06T17:00:02+00:00"
         },
         {
             "name": "symfony/remote-event",
