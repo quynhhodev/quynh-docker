@@ -20,5 +20,19 @@ services:
             - '../src/Entity/'
             - '../src/Kernel.php'
 
+    App\Service\PromotionProduct\BasePriceCalculator:
+        public: true
+
+    App\Service\PromotionProduct\QuantityDiscountDecorator:
+        arguments:
+            $discount: '@App\Service\PromotionProduct\BasePriceCalculator'
+            $threshold: 10 # Áp dụng giảm giá khi số lượng > 10
+            $discountRate: 0.1 # Giảm 10%
+
+    App\Service\PromotionProduct\PromotionDiscountDecorator:
+        arguments:
+            $discount: '@App\Service\PromotionProduct\QuantityDiscountDecorator'
+            $discountRate: 0.15 # Giảm thêm 15% từ chương trình khuyến mãi
+
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
