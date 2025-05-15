@@ -5,7 +5,7 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
-use App\Service\PromotionProduct\DiscountInterface;
+use App\Service\PromotionProduct\PromotionDiscountDecorator;
 
 final class CalculaterController extends AbstractController
 {
@@ -13,7 +13,7 @@ final class CalculaterController extends AbstractController
 
 
     public function __construct(
-        private DiscountInterface $discount
+        private PromotionDiscountDecorator $discount
     )
     {
     }
