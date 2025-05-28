@@ -23,3 +23,10 @@ RUN apt-get update && apt-get install -y libmemcached-dev libssl-dev zlib1g-dev 
 	&& pecl install memcached-3.2.0 \
 	&& docker-php-ext-enable memcached
 
+RUN composer install --no-interaction --no-scripts --no-progress --no-dev; \
+	composer dump-autoload --classmap-authoritative --no-dev; \
+	composer run-script post-install-cmd --no-dev; \
+	composer dump-env prod; \
+	composer clear-cache; \
+    sync;
+
