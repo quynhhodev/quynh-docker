@@ -7,7 +7,7 @@
 
 # FROM thecodingmachine/php:${PHP_VERSION}-v4-slim-apache
 
-# ENV COMPOSER_ALLOW_SUPERUSER "1"
+
 # ENV APACHE_RUN_USER=docker \
 # APACHE_RUN_GROUP=docker
 
@@ -19,6 +19,9 @@
 # WORKDIR /var/www/html
 
 FROM php:8.2-cli
+
+ENV COMPOSER_ALLOW_SUPERUSER="1"
+
 RUN apt-get update && apt-get install -y libmemcached-dev libssl-dev zlib1g-dev \
 	&& pecl install memcached-3.2.0 \
 	&& docker-php-ext-enable memcached
