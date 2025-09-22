@@ -46,8 +46,6 @@ final class DahboardController extends AbstractController
 
     public function getTokenUser(UserInterface $user, JWTTokenManagerInterface $JWTManager): JsonResponse
     {
-        // ...
-
         return new JsonResponse(['token' => $JWTManager->create($user)]);
     }
 
