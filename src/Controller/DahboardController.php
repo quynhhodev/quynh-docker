@@ -38,7 +38,7 @@ final class DahboardController extends AbstractController
         $this->bus->dispatch(new SendEmailMessage('abc', 500, 100));
         $user = $this->userRepository->findOneBy(['id' => 1]);
         $token = $this->getTokenUser($user, $JWTManager);
-
+        // dd($token->getContent());
         return $this->json([
             json_decode($token->getContent(), true)
         ]);
