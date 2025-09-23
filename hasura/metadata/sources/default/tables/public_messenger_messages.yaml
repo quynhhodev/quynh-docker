@@ -1,0 +1,3 @@
+table:
+    schema: public
+    name: messenger_messages

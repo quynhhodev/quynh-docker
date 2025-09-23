@@ -45,7 +45,7 @@ services:
                 protocol: tcp
     
     hasura:
-        image: hasura/graphql-engine:${HASURA_VERSION:-v2.1.1}
+        image: hasura/graphql-engine:${HASURA_VERSION:-v2.48.0}
         restart: on-failure
         ports:
             -   target: 8080
