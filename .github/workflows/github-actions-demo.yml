@@ -32,6 +32,9 @@ jobs:
           retry-delay: 5s # Optional, only applicable to max-attempts > 1
           # Retry all errors, including 404. This option might trigger curl upgrade.
           retry-all: true # Optional, defaults to "false"
+      
+      - name: Install Composer dependencies
+        run: docker compose -f compose.yml run --rm php composer install --no-interaction --no-progress
 
       - name: Test migration
         run: docker compose -f compose.yml exec -T php php bin/console doctrine:migrations:migrate --no-interaction --allow-no-migration
